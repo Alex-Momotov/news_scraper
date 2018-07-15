@@ -5,12 +5,12 @@ import time
 import datetime
 import json
 import os
-os.chdir("C:\\Users\Sasha\Coding\Python\\4. Dissertation\\1. Web Scraping")
 
-date = datetime.date(2018,4,17)  # START DATE (year,month,day)
-finish_date = datetime.date(2018,4,18)  # STOP DATE (year,month,day)
+
+date = datetime.date(2018,1,1)  		# START DATE (year,month,day)
+finish_date = datetime.date(2018,1,10)  # STOP DATE (year,month,day)
 t_delta = datetime.timedelta(days=1)
-
+waiting = 0.01
 while date != finish_date:
     date_for_link = date.strftime('%Y%m%d')
     date_for_us = date.strftime('%Y-%m-%d')
@@ -32,7 +32,6 @@ while date != finish_date:
                 # Make a soup from single article in list of links. Gather body, news category, time, title.
                 done = False
                 attempt = 1
-                waiting = 0.01
                 while not done:
                     try:
                         time.sleep(waiting)
@@ -69,8 +68,7 @@ while date != finish_date:
                  'title': title,
                  'body': body})
             print(f'({num+1}/{num_links}) day progress -- ({date_for_us}) year progress')
-            # time.sleep(random.uniform(0.1, 0.12))
-        with open('data/' + date_for_us + '.json', 'w') as f:
+        with open('scraped news/' + date_for_us + '.json', 'w') as f:
             json.dump(articles_in_given_day, f, indent=5)
         date += t_delta
     except AttributeError:
