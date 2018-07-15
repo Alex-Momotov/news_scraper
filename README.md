@@ -14,7 +14,7 @@
 3. Launch "scraping_reuters.py" and leave it running to scrape the archive at the average rate of 200,000 news articles per 24 hours. The algorithm will automatically increase waiting time if too many requests are sent per minute. This is to follow the web scraping etiquette.
 
 ## Scraped News Storage
-Gathered articles will be saved in 'scraped news' directory as a list of JSON files. Each file contains all articles published by Reuters on a particular date. Each JSON file contains a list of dictionaries where each dictionary is a single news article. Dictionaries have four keys: 'news_category', 'time', 'title' and 'body' where time is the date and time of article publication in UTC timezone.
+Gathered articles will be saved in 'scraped news' directory as a list of JSON files. Each file contains all articles published by Reuters on a particular date. They are stored as a list of dictionaries where each dictionary is a single news article. Dictionaries have four keys: 'news_category', 'time', 'title' and 'body' where time is the date and time of article publication in UTC timezone.
 
 ## News Exploration with Jupyter
 The included Jupyter Notebook runs statistical analysis on the gathered news articles once scraping is finished. It helps answer the following questions: 
