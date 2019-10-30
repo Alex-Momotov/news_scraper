@@ -1,6 +1,6 @@
 # Scraping Reuters Archive
 
-### The algorithm scrapes the Thomson Reuters archive between custom dates at an average rate of 200,000 news stories per day. In addition I include Jupyter Notebook running statistical analysis of scraped news such as number of atricles published by Reuters per weekday/month, distribution of news categories and others.
+### The algorithm scrapes the Thomson Reuters archive between custom dates at an average rate of 200,000 news stories per day. In addition I include Jupyter Notebook running statistical analysis of scraped news such as number of articles published by Reuters per weekday/month, distribution of news categories and others.
 
 ## Requirements
 - bs4 (BeautifulSoup)
